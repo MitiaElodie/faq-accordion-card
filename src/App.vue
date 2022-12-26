@@ -60,6 +60,8 @@ export default {
 </template>
 
 <style lang="scss">
+@use './styles/constants.scss';
+
 .faq {
   &__container {
     display: flex;
@@ -67,6 +69,29 @@ export default {
     justify-content: center;
     min-height: 100vh;
     font-size: 12px;
+    background: linear-gradient(constants.$soft-violet, constants.$soft-blue)
+  }
+
+  &__content {
+    display: flex;
+    margin: 10px;
+    width: 800px;
+    border-radius: 20px;
+    background-color: white;
+  }
+
+  &__img-container,
+  &__question-list {
+    width: 50%;
+  }
+
+  &__question-list {
+    margin: 20px;
+    margin-right: 60px;
+  }
+
+  &__dropdown-list {
+    margin: 10px 0px;
   }
 }
 
