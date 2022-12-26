@@ -66,6 +66,7 @@ export default {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    font-size: 12px;
   }
 }
 
