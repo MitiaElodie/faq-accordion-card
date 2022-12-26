@@ -37,20 +37,38 @@ export default {
 </script>
 
 <template>
-  <div class="faq__container">
-    <div class="faq__content">
-      <div class="faq__img-container"></div>
-      <div class="faq__question-list">
-        <h1 class="faq__title">FAQ</h1>
-        <DropdownList
-          class="faq__dropdown-list"
-          :qa-list="qaList"
-        />
+  <main>
+    <div class="faq__container">
+      <div class="faq__content">
+        <div class="faq__img-container"></div>
+        <div class="faq__question-list">
+          <h1 class="faq__title">FAQ</h1>
+          <DropdownList
+            class="faq__dropdown-list"
+            :qa-list="qaList"
+          />
+        </div>
       </div>
     </div>
-  </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/MitiaElodie">Anjara Mitia Elodie</a>.
+    </div>
+  </footer>
 </template>
 
-<style>
+<style lang="scss">
+.faq {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+}
 
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 </style>
