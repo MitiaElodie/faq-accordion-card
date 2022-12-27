@@ -20,6 +20,19 @@ export default {
     }
   },
 
+  watch: {
+    isOpen: {
+      handler(newVal) {
+        const img = this.$refs['dropdownIcon']
+        let rotation = 'rotate(0deg)'
+        if(newVal) {
+          rotation = 'rotate(180deg)'
+        }
+        img.style.transform = rotation
+      }
+    }
+  },
+
   methods: {
     onClickOutside() {
       this.isOpen = false;
@@ -45,7 +58,7 @@ export default {
           
         >{{ question }}</span>
         <div class="dropdown__icon-container">
-          <img src="../assets/icon-arrow-down.svg" alt="Icon" class="dropdown__icon" />
+          <img ref="dropdownIcon" src="../assets/icon-arrow-down.svg" alt="Icon" class="dropdown__icon" />
         </div>
       </div>
       <div
@@ -84,6 +97,10 @@ export default {
   &__answer-container {
     margin-top: 10px;
     color: constants.$dark-grayish-blue;
+  }
+
+  &__icon {
+    transition: all 300ms ease-in-out;
   }
 
   &--open {
