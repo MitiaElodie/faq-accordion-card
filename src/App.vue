@@ -40,7 +40,16 @@ export default {
   <main>
     <div class="faq__container">
       <div class="faq__content">
-        <div class="faq__img-container"></div>
+        <div class="faq__img-container">
+          <div class="faq__img-container--desktop">
+            <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-desktop.svg"/>
+            <img class="faq__img-box" alt="Mail box" src="./assets/illustration-box-desktop.svg"/>
+          </div>
+
+          <div class="faq__img-container--mobile">
+            <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-mobile.svg"/>
+          </div>
+        </div>
         <div class="faq__question-list">
           <h1 class="faq__title">FAQ</h1>
           <DropdownList
@@ -61,6 +70,9 @@ export default {
 
 <style lang="scss">
 @use './styles/constants.scss';
+:root {
+  --question-list-padding: 60px;
+}
 
 .faq {
   &__container {
@@ -68,13 +80,13 @@ export default {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    font-size: 12px;
+    font-size: 14px;
     background: linear-gradient(constants.$soft-violet, constants.$soft-blue)
   }
 
   &__content {
     display: flex;
-    margin: 10px;
+    margin: 20px;
     width: 800px;
     border-radius: 20px;
     background-color: white;
@@ -86,19 +98,56 @@ export default {
   }
 
   &__img-container {
-    background-image: url('./assets/bg-pattern-desktop.svg');
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: cover;
+    &--desktop {
+      display: block;
+      background-image: url('./assets/bg-pattern-desktop.svg');
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-size: cover;
+    }
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__question-list {
-    padding: 60px;
+    padding: var(--question-list-padding);
   }
 
   &__dropdown-list {
     margin: 10px 0px;
   }
+}
+
+@media screen and (max-width: 600px) {
+:root {
+  --question-list-padding: 40px;
+}
+.faq {
+  &__content {
+    flex-direction: column;
+  }
+
+  &__img-container,
+  &__question-list {
+    width: 100%;
+  }
+
+  &__img-container {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      display: block;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+}
 }
 
 .attribution { font-size: 11px; text-align: center; }
