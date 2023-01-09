@@ -85,8 +85,15 @@ export default {
     width: 50%;
   }
 
+  &__img-container {
+    background-image: url('./assets/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+  }
+
   &__question-list {
-    margin: 60px;
+    padding: 60px;
   }
 
   &__dropdown-list {
