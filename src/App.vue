@@ -42,8 +42,8 @@ export default {
       <div class="faq__content">
         <div class="faq__img-container faq__img-container--desktop">
           <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-desktop.svg"/>
-          <img class="faq__img-box" alt="Mail box" src="./assets/illustration-box-desktop.svg"/>
         </div>
+        <img class="faq__img-box" alt="Mail box" src="./assets/illustration-box-desktop.svg"/>
 
         <div class="faq__img-container faq__img-container--mobile">
           <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-mobile.svg"/>
@@ -78,7 +78,7 @@ export default {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    font-size: 14px;
+    font-size: 12px;
     background: linear-gradient(constants.$soft-violet, constants.$soft-blue)
   }
 
@@ -88,6 +88,7 @@ export default {
     width: 800px;
     border-radius: 20px;
     background-color: white;
+    position: relative;
   }
 
   &__img-container,
@@ -98,15 +99,32 @@ export default {
   &__img-container {
     &--desktop {
       display: block;
+      overflow: hidden;
       background-image: url('./assets/bg-pattern-desktop.svg');
       background-repeat: no-repeat;
-      background-position: top left;
-      background-size: cover;
+      background-size: 675px;
+      background-position: -330px -114px;
     }
 
     &--mobile {
       display: none;
     }
+  }
+  
+  $box-length: 150px;
+  &__img-box {
+    display: block;
+    position: absolute;
+    height: $box-length;
+    margin-top: 220px;
+    margin-left: -70px;
+  }
+
+  $img-length: 300px;
+  &__img-person {
+    height: $img-length;
+    margin-top: 100px;
+    margin-left: -50px;
   }
 
   &__question-list {
@@ -116,9 +134,10 @@ export default {
   &__dropdown-list {
     margin: 10px 0px;
   }
+
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
 :root {
   --question-list-padding: 40px;
 }
@@ -153,10 +172,15 @@ export default {
     height: $img-length;
     position: relative;
     margin-top: -120px;
+    margin-left: 0;
   }
 
   &__title {
     text-align: center;
+  }
+
+  &__img-box {
+    display: none;
   }
 }
 }
