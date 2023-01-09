@@ -40,6 +40,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - VueJS
+I've finished it in 7 pomodoros. (25mn/pomodoro)
 
 ### Useful resources
 
