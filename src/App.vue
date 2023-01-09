@@ -116,7 +116,7 @@ export default {
     display: block;
     position: absolute;
     height: $box-length;
-    margin-top: 220px;
+    margin-top: 215px;
     margin-left: -70px;
   }
 
