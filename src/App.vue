@@ -40,15 +40,13 @@ export default {
   <main>
     <div class="faq__container">
       <div class="faq__content">
-        <div class="faq__img-container">
-          <div class="faq__img-container--desktop">
-            <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-desktop.svg"/>
-            <img class="faq__img-box" alt="Mail box" src="./assets/illustration-box-desktop.svg"/>
-          </div>
+        <div class="faq__img-container faq__img-container--desktop">
+          <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-desktop.svg"/>
+          <img class="faq__img-box" alt="Mail box" src="./assets/illustration-box-desktop.svg"/>
+        </div>
 
-          <div class="faq__img-container--mobile">
-            <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-mobile.svg"/>
-          </div>
+        <div class="faq__img-container faq__img-container--mobile">
+          <img class="faq__img-person" alt="Someone browsing the faq" src="./assets/illustration-woman-online-mobile.svg"/>
         </div>
         <div class="faq__question-list">
           <h1 class="faq__title">FAQ</h1>
@@ -134,14 +132,27 @@ export default {
     width: 100%;
   }
 
+  $img-length: 250px;
   &__img-container {
     &--desktop {
       display: none;
     }
 
     &--mobile {
-      display: block;
+      display: flex;
+      justify-content: center;
+      background-image: url('./assets/bg-pattern-mobile.svg');
+      background-size: $img-length;
+      background-repeat: no-repeat;
+      background-position: 50% 20px;
     }
+  }
+
+  &__img-person {
+    width: $img-length;
+    height: $img-length;
+    position: relative;
+    margin-top: -120px;
   }
 
   &__title {
