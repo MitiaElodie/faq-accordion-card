@@ -86,8 +86,7 @@ export default {
   }
 
   &__question-list {
-    margin: 20px;
-    margin-right: 60px;
+    margin: 60px;
   }
 
   &__dropdown-list {

@@ -28,3 +28,12 @@ export default {
    </div>
 </div>
 </template>
+
+<style lang="scss">
+@use '../styles/constants.scss';
+.dropdown-list {
+   &__dropdown {
+      border-bottom: 1px solid constants.$light-grayish-blue;
+   }
+}
+</style>
